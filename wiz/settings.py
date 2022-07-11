@@ -24,7 +24,7 @@ TEMPLATES_DIRS = os.path.join(BASE_DIR,'templates')
 SECRET_KEY = 'django-insecure-+nvwtiqax&(v!@s=6$uuz887ix9eyfx32$j&z$6$_$-!(b+@mt'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = []
 
@@ -39,16 +39,18 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django_summernote',
+    
     'crispy_forms',
     'django.contrib.sitemaps',
-     'debug_toolbar',
-    'blog',
+    'debug_toolbar',
+    'blog'
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'debug_toolbar.middleware.DebugToolbarMiddleware',
+     'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -60,7 +62,7 @@ ROOT_URLCONF = 'wiz.urls'
 
 
 INTERNAL_IPS = [
-    '127.0.0.1',
+    '127.0.0.1' 'wizblog0.herokuapp.com/',
 ]
 
 
